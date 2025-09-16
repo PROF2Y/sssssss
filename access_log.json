@@ -1,0 +1,42 @@
+[
+  {
+    "type": "visit",
+    "client_info": {
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+      "accept_language": "en-US,en;q=0.9",
+      "accept_encoding": "gzip, deflate, br, zstd",
+      "referer": "غير معروف",
+      "host": "127.0.0.1:5000",
+      "connection": "keep-alive",
+      "upgrade_insecure_requests": "1",
+      "timestamp": "2025-09-16T22:41:08.144334",
+      "method": "GET",
+      "path": "/",
+      "args": {},
+      "form_data": {}
+    },
+    "is_bot": true,
+    "bot_reason": "لا يوجد Referer"
+  },
+  {
+    "type": "visit",
+    "client_info": {
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+      "accept_language": "en-US,en;q=0.9",
+      "accept_encoding": "gzip, deflate, br, zstd",
+      "referer": "غير معروف",
+      "host": "127.0.0.1:5000",
+      "connection": "keep-alive",
+      "upgrade_insecure_requests": "1",
+      "timestamp": "2025-09-16T22:44:26.812463",
+      "method": "GET",
+      "path": "/",
+      "args": {},
+      "form_data": {}
+    },
+    "is_bot": true,
+    "bot_reason": "لا يوجد Referer"
+  }
+]

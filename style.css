@@ -1,0 +1,715 @@
+/*
+========================================
+ملف CSS تعليمي لمحاكاة تصميم Instagram
+الغرض: توضيح كيفية إنشاء تصميم مطابق للموقع الأصلي
+========================================
+
+هذا الملف يحتوي على:
+1. تصميم مطابق تماماً لصفحة تسجيل دخول Instagram
+2. ألوان وخطوط مطابقة للتصميم الأصلي
+3. تأثيرات بصرية وانتقالات سلسة
+4. تصميم متجاوب مع جميع الأجهزة
+5. تفاصيل دقيقة لزيادة المصداقية
+
+تحذير: هذا التصميم للتعليم فقط!
+========================================
+*/
+
+/* ========================================
+   1. إعادة ضبط الافتراضيات العامة
+   ======================================== */
+
+/* إزالة جميع الهوامش والحدود الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* حساب العرض والارتفاع يشمل الحدود والهوامش */
+}
+
+/* ========================================
+   2. الإعدادات الأساسية للصفحة
+   ======================================== */
+
+body {
+    /* خط Instagram الرسمي */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    /* لون الخلفية المطابق للتطبيق الأصلي */
+    background-color: #fafafa;
+    
+    /* إعدادات النص */
+    color: #262626;
+    font-size: 14px;
+    line-height: 1.5;
+    
+    /* إخفاء شريط التمرير الأفقي */
+    overflow-x: hidden;
+    
+    /* تجهيز الصفحة للتخطيط المرن */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* دعم اللغة العربية */
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ========================================
+   3. الحاوي الرئيسي للصفحة
+   ======================================== */
+
+.container {
+    /* توسيط المحتوى أفقياً وعمودياً */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* ملء كامل ارتفاع الصفحة */
+    min-height: 100vh;
+    padding: 32px 16px;
+    
+    /* خلفية تدرجية خفيفة (مثل Instagram) */
+    background: linear-gradient(45deg, #fafafa 25%, transparent 25%);
+}
+
+/* ========================================
+   4. حاوي نموذج تسجيل الدخول
+   ======================================== */
+
+.login-container {
+    /* عرض ثابت مطابق للتطبيق الأصلي */
+    width: 100%;
+    max-width: 350px;
+    
+    /* تنظيم العناصر عمودياً */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ========================================
+   5. صندوق تسجيل الدخول الرئيسي
+   ======================================== */
+
+.login-box {
+    /* خلفية بيضاء مع حدود رفيعة */
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px; /* حدود مستطيلة تماماً مثل Instagram */
+    
+    /* هوامش داخلية */
+    padding: 40px 40px 20px;
+    
+    /* تنظيم المحتوى */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* ظلال خفيفة للعمق */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975);
+}
+
+/* ========================================
+   6. شعار Instagram
+   ======================================== */
+
+.logo {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.logo h1 {
+    /* خط مخصص لشعار Instagram */
+    font-family: 'Billabong', cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 48px;
+    font-weight: normal;
+    
+    /* لون الشعار الأصلي */
+    color: #262626;
+    
+    /* تأثير تدرجي للشعار (مثل الأصلي) */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    /* تحسين عرض النص */
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+/* ========================================
+   7. حاوي مجموعة الحقول
+   ======================================== */
+
+.input-group {
+    /* تنظيم الحقول عمودياً */
+    width: 100%;
+    margin-bottom: 6px;
+    position: relative;
+}
+
+/* ========================================
+   8. تصميم حقول الإدخال
+   ======================================== */
+
+input[type="text"],
+input[type="password"] {
+    /* الأبعاد والتخطيط */
+    width: 100%;
+    height: 44px; /* ارتفاع مطابق للأصلي */
+    padding: 9px 0 7px 8px;
+    
+    /* الخط والنص */
+    font-size: 14px;
+    line-height: 18px;
+    color: #262626;
+    
+    /* الحدود والخلفية */
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    
+    /* إزالة التأثيرات الافتراضية */
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    
+    /* انتقالات سلسة */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* تأثيرات التركيز على الحقول */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #a8a8a8;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px #a8a8a8;
+}
+
+/* تصميم النص التوضيحي (Placeholder) */
+input::placeholder {
+    color: #8e8e8e;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+/* دعم اللغة العربية في الحقول */
+input[type="text"]:lang(ar),
+input[type="password"]:lang(ar) {
+    text-align: right;
+    direction: rtl;
+}
+
+/* ========================================
+   9. زر تسجيل الدخول
+   ======================================== */
+
+.login-btn {
+    /* الأبعاد والتخطيط */
+    width: 100%;
+    height: 32px;
+    padding: 5px 9px;
+    margin: 8px 0;
+    
+    /* الخط والنص */
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    line-height: 20px;
+    
+    /* الخلفية والألوان */
+    background: #0095f6; /* اللون الأزرق الرسمي لـ Instagram */
+    border: none;
+    border-radius: 4px;
+    
+    /* مؤشر اليد عند المرور */
+    cursor: pointer;
+    
+    /* إزالة التأثيرات الافتراضية */
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    
+    /* انتقالات سلسة */
+    transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* تأثير المرور بالماوس على الزر */
+.login-btn:hover:not(:disabled) {
+    background: #1877f2; /* لون أزرق أغمق عند المرور */
+}
+
+/* تأثير الضغط على الزر */
+.login-btn:active:not(:disabled) {
+    background: #166fe5;
+    transform: scale(0.98); /* تصغير طفيف عند الضغط */
+}
+
+/* حالة الزر المعطل */
+.login-btn:disabled {
+    background: #b2dffc;
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+/* ========================================
+   10. الخط الفاصل مع كلمة "أو"
+   ======================================== */
+
+.divider {
+    /* تنظيم العناصر أفقياً */
+    display: flex;
+    align-items: center;
+    margin: 10px 0 18px;
+    width: 100%;
+}
+
+.divider-line {
+    /* خط رفيع يملأ المساحة المتاحة */
+    flex: 1;
+    height: 1px;
+    background: #dbdbdb;
+}
+
+.divider-text {
+    /* نص في المنتصف */
+    padding: 0 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #8e8e8e;
+    text-transform: uppercase; /* أحرف كبيرة */
+}
+
+/* ========================================
+   11. رابط تسجيل الدخول عبر Facebook
+   ======================================== */
+
+.facebook-login {
+    /* إزالة التأثيرات الافتراضية للرابط */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+    /* التصميم */
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 18px;
+    
+    /* الخط والألوان */
+    font-size: 14px;
+    font-weight: 600;
+    color: #385185; /* لون Facebook الأزرق */
+    
+    /* انتقالات سلسة */
+    transition: opacity 0.2s ease-in-out;
+}
+
+.facebook-login:hover {
+    opacity: 0.7;
+}
+
+.facebook-icon {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+/* دعم اللغة العربية للرابط */
+.facebook-login:lang(ar) .facebook-icon {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+/* ========================================
+   12. رابط نسيان كلمة المرور
+   ======================================== */
+
+.forgot-password {
+    /* تصميم الرابط */
+    font-size: 12px;
+    line-height: 14px;
+    color: #00376b;
+    text-decoration: none;
+    text-align: center;
+    
+    /* انتقالات سلسة */
+    transition: opacity 0.2s ease-in-out;
+}
+
+.forgot-password:hover {
+    opacity: 0.7;
+}
+
+/* ========================================
+   13. صندوق التسجيل
+   ======================================== */
+
+.signup-box {
+    /* تصميم مطابق لصندوق تسجيل الدخول */
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 20px;
+    text-align: center;
+    
+    /* ظلال خفيفة */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975);
+}
+
+.signup-box p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.signup-link {
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.signup-link:hover {
+    opacity: 0.7;
+}
+
+/* ========================================
+   14. قسم تحميل التطبيق
+   ======================================== */
+
+.app-download {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.app-download p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #262626;
+}
+
+.download-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.app-store-link,
+.google-play-link {
+    /* تصميم أزرار التحميل */
+    display: inline-block;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #262626;
+    font-size: 12px;
+    font-weight: 500;
+    
+    /* انتقالات سلسة */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.app-store-link:hover,
+.google-play-link:hover {
+    background: #f9f9f9;
+}
+
+/* ========================================
+   15. التذييل (Footer)
+   ======================================== */
+
+.footer {
+    /* وضع التذييل في أسفل الصفحة */
+    margin-top: auto;
+    padding: 24px 16px;
+    background: #fafafa;
+}
+
+.footer-content {
+    max-width: 975px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-links {
+    /* إزالة نقاط القائمة */
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 32px;
+    margin-bottom: 16px;
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links a {
+    /* تصميم روابط التذييل */
+    color: #8e8e8e;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #262626;
+}
+
+.copyright {
+    color: #8e8e8e;
+    font-size: 12px;
+}
+
+/* ========================================
+   16. رسائل الخطأ
+   ======================================== */
+
+.error-message {
+    /* تصميم رسائل الخطأ */
+    background: #ffeaa7;
+    border: 1px solid #fdcb6e;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    color: #d63031;
+    font-size: 14px;
+    text-align: center;
+    
+    /* رسوم متحركة لظهور الرسالة */
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   17. التصميم المتجاوب (Responsive Design)
+   ======================================== */
+
+/* شاشات الهواتف الذكية */
+@media (max-width: 450px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .login-box {
+        padding: 24px 24px 16px;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+    
+    .signup-box {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+    
+    .logo h1 {
+        font-size: 40px;
+    }
+    
+    .footer {
+        padding: 16px;
+    }
+    
+    .footer-links {
+        gap: 8px 16px;
+    }
+}
+
+/* شاشات الأجهزة اللوحية */
+@media (min-width: 451px) and (max-width: 768px) {
+    .login-container {
+        max-width: 400px;
+    }
+    
+    .login-box {
+        padding: 32px 32px 16px;
+    }
+}
+
+/* شاشات سطح المكتب الكبيرة */
+@media (min-width: 1200px) {
+    .container {
+        background-image: 
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23f0f0f0" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    }
+}
+
+/* ========================================
+   18. تحسينات إضافية للمصداقية
+   ======================================== */
+
+/* تأثير التركيز المحسن للحقول */
+.input-group.focused input {
+    border-color: #0095f6;
+    box-shadow: 0 0 0 1px #0095f6;
+}
+
+/* رسوم متحركة لتحميل الصفحة */
+.login-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تأثير النبض للزر عند التحميل */
+.login-btn.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   19. دعم الوضع المظلم (Dark Mode)
+   ======================================== */
+
+/* كشف إعدادات النظام للوضع المظلم */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    
+    .login-box,
+    .signup-box {
+        background: #262626;
+        border-color: #363636;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        background: #262626;
+        border-color: #363636;
+        color: #ffffff;
+    }
+    
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #0095f6;
+        background: #262626;
+    }
+    
+    input::placeholder {
+        color: #a8a8a8;
+    }
+    
+    .footer {
+        background: #000000;
+    }
+    
+    .app-store-link,
+    .google-play-link {
+        background: #262626;
+        border-color: #363636;
+        color: #ffffff;
+    }
+}
+
+/* ========================================
+   20. تحسينات الأداء والوصولية
+   ======================================== */
+
+/* تحسين عرض الخطوط */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* تحسين الأداء للرسوم المتحركة */
+* {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+/* دعم قارئات الشاشة */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* تحسين التركيز للمستخدمين الذين يستخدمون لوحة المفاتيح */
+*:focus-visible {
+    outline: 2px solid #0095f6;
+    outline-offset: 2px;
+}
+
+/* إخفاء التركيز للمستخدمين الذين يستخدمون الماوس */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/*
+========================================
+ملخص ما يحتويه هذا الملف:
+
+1. تصميم مطابق بنسبة 99% لصفحة Instagram الأصلية
+2. ألوان وخطوط وأبعاد مطابقة تماماً
+3. تأثيرات بصرية وانتقالات سلسة
+4. تصميم متجاوب يعمل على جميع الأجهزة
+5. دعم كامل للغة العربية واتجاه RTL
+6. دعم الوضع المظلم
+7. تحسينات للأداء والوصولية
+8. رسوم متحركة تزيد من المصداقية
+
+أهمية هذا التصميم في التصيد:
+- يجعل الصفحة غير قابلة للتمييز عن الأصلية
+- يبني الثقة لدى الضحية
+- يقلل من الشكوك
+- يحسن معدل نجاح الهجوم
+
+علامات الكشف للمستخدمين:
+1. فحص رابط الموقع بعناية
+2. التحقق من شهادة SSL
+3. ملاحظة أي اختلافات طفيفة في التصميم
+4. استخدام مدير كلمات مرور (يكتشف المواقع المزيفة)
+5. عدم الوثوق بالروابط في الرسائل
+
+تحذير: هذا التصميم للتعليم فقط!
+========================================
+*/

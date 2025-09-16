@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: instagram-phishing-demo
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: FLASK_ENV
+        value: production
