@@ -18,15 +18,30 @@ body {
     margin: 0;
 }
 
-/* التخطيط الرئيسي */
+/* التخطيط الرئيسي - Container مرن */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
 .left {
-    float: left;
-    width: 50%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 32px;
 }
 
 .right {
-    float: right;
-    width: 50%;
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* صندوق تسجيل الدخول */
@@ -248,6 +263,7 @@ p {
 .phone-container {
     margin: auto;
     width: 50%;
+    position: relative;
 }
 
 .ig-phone {
@@ -266,6 +282,208 @@ p {
     left: 484px;
     margin-top: 65px;
     border-radius: 10px;
+}
+
+/* ========================================
+   التصميم المتجاوب (Responsive Design)
+   ======================================== */
+
+/* للأجهزة اللوحية والشاشات المتوسطة */
+@media screen and (max-width: 875px) {
+    .main-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .left {
+        display: none; /* إخفاء صورة الهاتف على الشاشات الصغيرة */
+    }
+    
+    .right {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        margin: 0;
+    }
+    
+    body {
+        background-color: #fafafa;
+    }
+}
+
+/* للهواتف المحمولة - تصميم Instagram الحقيقي */
+@media screen and (max-width: 450px) {
+    body {
+        background-color: #ffffff; /* خلفية بيضاء للموبايل مثل Instagram */
+        padding: 0;
+    }
+    
+    .main-container {
+        padding: 0;
+        min-height: 100vh;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    
+    .right {
+        width: 100%;
+        max-width: none;
+        padding: 32px 32px 40px;
+    }
+    
+    .login-box {
+        border: none; /* إزالة الحدود على الموبايل */
+        box-shadow: none;
+        width: 100%;
+        background-color: transparent;
+        height: auto;
+        margin: 60px 0 0 0;
+    }
+    
+    .sign-up-box {
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        margin: 32px 0 0 0;
+        height: auto;
+        padding: 25px 0;
+        border-top: 1px solid #dbdbdb;
+    }
+    
+    .app-install {
+        width: 100%;
+        margin-top: 32px;
+    }
+    
+    input {
+        width: 100%;
+        background-color: #fafafa;
+        border: 1px solid #dbdbdb;
+        border-radius: 6px;
+        font-size: 16px; /* منع التكبير التلقائي على iOS */
+        padding: 14px 16px;
+        margin: 0 0 12px 0;
+        box-sizing: border-box;
+    }
+    
+    input:focus {
+        outline: none;
+        border-color: #a8a8a8;
+    }
+    
+    button {
+        width: 100%;
+        margin: 16px 0 0 0;
+        padding: 14px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 8px;
+        background-color: #0095f6;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    button:disabled {
+        background-color: #b2dffc;
+        opacity: 0.3;
+    }
+    
+    .instagram-logo {
+        width: 175px;
+        margin: 0 0 36px 0;
+    }
+    
+    h3 {
+        margin: 36px 0 36px 0;
+        font-size: 13px;
+        color: #8e8e8e;
+        font-weight: 600;
+    }
+    
+    .facebook {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .forgot {
+        margin: 36px 0 0 0;
+        font-size: 12px;
+    }
+    
+    .sign-up {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    h4 {
+        font-size: 14px;
+        color: #262626;
+        font-weight: 400;
+        margin: 0 8px 0 0;
+    }
+    
+    #footer {
+        position: static;
+        margin-top: 60px;
+        padding: 0 32px 40px;
+    }
+    
+    .footer-link {
+        font-size: 12px;
+        margin: 0 16px 12px 0;
+        line-height: 16px;
+        color: #c7c7c7;
+    }
+    
+    .footer-details {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 24px;
+    }
+    
+    .dropdown {
+        margin-bottom: 16px;
+    }
+    
+    .drop-btn {
+        font-size: 12px;
+        color: #c7c7c7;
+        padding: 0;
+    }
+}
+
+/* للشاشات الكبيرة جداً */
+@media screen and (min-width: 1200px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .left, .right {
+        width: auto;
+    }
+    
+    .right {
+        margin-left: 32px;
+    }
+}
+
+/* تحسينات إضافية للتصميم المتجاوب */
+@media screen and (max-width: 875px) and (min-width: 451px) {
+    /* للأجهزة اللوحية */
+    .login-box {
+        margin-top: 60px;
+    }
+    
+    body {
+        justify-content: center;
+        padding: 40px 20px;
+    }
 }
 
 /* ========================================
